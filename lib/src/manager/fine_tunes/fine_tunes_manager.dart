@@ -65,9 +65,8 @@ class ACMOpenAIFineTunesManager {
     );
   }
 
-  ///cancel file
   void cancelFileTune() {
-    _client.log("stop openAI");
+    _client.log("stop openAI Finetune");
     _cancel.cancel();
   }
 }

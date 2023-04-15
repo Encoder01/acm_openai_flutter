@@ -12,14 +12,19 @@ class ACMOpenAIChatManager {
   ACMOpenAIChatManager(this._client);
 
   Future<ACMOpenAIChatCompleteResponse> create(ACMOpenAIChatCompleteTextRequest request) async {
-    return _client.post(kURL+ChatRoute.create, request.toJson(), onSuccess: (p0) {
+    return _client.post(kURL + ChatRoute.create, request.toJson(), onSuccess: (p0) {
       return ACMOpenAIChatCompleteResponse.fromJson(p0);
     }, cancelToken: _cancel);
   }
 
-  ///cancel edit
+  Stream<ACMOpenAIChatCompleteResponse> createSSE(ACMOpenAIChatCompleteTextRequest request)  {
+    return _client.sse(kURL + ChatRoute.create, request.toJson()..addAll({"stream": true}), complete: (p0) {
+      return ACMOpenAIChatCompleteResponse.fromJson(p0);
+    }, cancelToken: _cancel);
+  }
+
   void cancelCreate() {
-    _client.log("stop openAI Audio");
+    _client.log("stop openAI Chat");
     _cancel.cancel();
   }
 }

@@ -35,10 +35,10 @@ class ACMOpenAIChatCompleteTextRequest {
         'n': n,
         'stream': stream,
         'stop': stop,
-        'max_token': maxToken,
+        'max_tokens': maxToken,
         'presence_penalty': presencePenalty,
         'frequency_penalty': frequencyPenalty,
-        'logit_bias': logitBias,
+        //'logit_bias': logitBias,
         'user': user,
       });
 }

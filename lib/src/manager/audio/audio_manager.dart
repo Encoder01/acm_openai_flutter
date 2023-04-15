@@ -30,7 +30,6 @@ class ACMOpenAIAudioManager {
     );
   }
 
-  ///cancel edit
   void cancelAudio() {
     _client.log("stop openAI Audio");
     _cancel.cancel();

@@ -44,7 +44,7 @@ class ACMOpenAIFilesManager {
   }
 
   void cancelFile() {
-    _client.log("stop openAI");
+    _client.log("stop openAI File");
     _cancel.cancel();
   }
 }

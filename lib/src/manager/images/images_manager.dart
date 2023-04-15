@@ -39,9 +39,8 @@ class ACMOpenAIImagesManager {
     });
   }
 
-  ///cancel edit
   void cancelEdit() {
-    _client.log("stop openAI edit");
+    _client.log("stop openAI image");
     _cancel.cancel();
   }
 }

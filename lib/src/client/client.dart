@@ -2,15 +2,15 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:acm_open_ai_flutter/acm_open_ai_flutter.dart';
+import 'package:acm_open_ai_flutter/src/acm_open_ai.dart';
 import 'package:acm_open_ai_flutter/src/core/exceptions/req_err.dart';
 import 'package:acm_open_ai_flutter/src/core/interfaces/base_client.dart';
 import 'package:acm_open_ai_flutter/src/core/logger/logger.dart';
 import 'package:dio/dio.dart';
 
 class ACMOpenAINetworkingClient extends ACMOpenAINetworkingClientWrapper {
-  ACMOpenAINetworkingClient({bool isLogging = false}) {
-    _dio = ACMOpenAI.instance.dio;
+  ACMOpenAINetworkingClient({required Dio dio,bool isLogging = false}) {
+    _dio = dio;
     ACMOpenAILogger.isActive = isLogging;
   }
 
