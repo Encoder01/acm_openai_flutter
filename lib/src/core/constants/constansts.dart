@@ -1,47 +1,5 @@
 /// Base ChatGPT Url
-const kURL = "https://api.openai.com/v1/";
-
-const kCompletion = 'completions';
-
-///get list model
-const kModelList = 'models';
-
-///get list engine
-const kEngineList = 'engines';
-
-///generate image with prompt
-const kGenerateImage = 'images/generations';
-
-///chat completion
-const kChatGptTurbo = 'chat/completions';
-
-///edit prompt
-const kEditPrompt = 'edits';
-
-///image edit
-const kImageEdit = 'images/edits';
-
-///variation
-const kVariation = 'images/variations';
-
-///embeddings
-const kEmbedding = 'embeddings';
-
-///audio
-const kTranscription = 'audio/transcriptions';
-const kTranslations = 'audio/translations';
-
-///files
-const kFile = 'files';
-
-///fine tune
-const kFineTune = 'fine-tunes';
-
-/// fine tune model
-const kFineTuneModel = 'models';
-
-///moderations
-const kModeration = 'moderations';
+const kURL = "https://api.openai.com/";
 
 ///model name
 const kTextDavinci3 = 'text-davinci-003';
@@ -95,4 +53,4 @@ String translateToRus({required String word}) =>
     "Translate this into Russian : $word";
 
 ///
-const kOpenAI = 'OpenAI';
+const kOpenAI = 'ACMOpenAI';
