@@ -1,5 +1,5 @@
-class ACMOpenAIDeleteFile {
-  ACMOpenAIDeleteFile({
+class ACMOpenAIDeleteFileResponse {
+  ACMOpenAIDeleteFileResponse({
     required this.id,
     required this.object,
     required this.deleted,
@@ -9,7 +9,7 @@ class ACMOpenAIDeleteFile {
   String object;
   bool deleted;
 
-  factory ACMOpenAIDeleteFile.fromJson(Map<String, dynamic> json) => ACMOpenAIDeleteFile(
+  factory ACMOpenAIDeleteFileResponse.fromJson(Map<String, dynamic> json) => ACMOpenAIDeleteFileResponse(
     id: json["id"],
     object: json["object"],
     deleted: json["deleted"],

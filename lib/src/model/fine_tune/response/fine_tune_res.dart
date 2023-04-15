@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-ACMOpenAIFineTune fineTuneFromJson(String str) => ACMOpenAIFineTune.fromJson(json.decode(str));
+ACMOpenAIFineTuneResponse fineTuneFromJson(String str) => ACMOpenAIFineTuneResponse.fromJson(json.decode(str));
 
-class ACMOpenAIFineTune {
-  ACMOpenAIFineTune({
+class ACMOpenAIFineTuneResponse {
+  ACMOpenAIFineTuneResponse({
     required this.id,
     required this.object,
     required this.model,
@@ -33,7 +33,7 @@ class ACMOpenAIFineTune {
   List<TrainingFile>? trainingFiles;
   DateTime? updatedAt;
 
-  factory ACMOpenAIFineTune.fromJson(Map<String, dynamic> json) => ACMOpenAIFineTune(
+  factory ACMOpenAIFineTuneResponse.fromJson(Map<String, dynamic> json) => ACMOpenAIFineTuneResponse(
     id: json["id"],
     object: json["object"],
     model: json["model"],

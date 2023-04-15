@@ -1,4 +1,4 @@
-class ACMOpenAICreateFineTune {
+class ACMOpenAICreateFineTuneRequest {
   final String trainingFile;
 
   final String? validationFile;
@@ -23,7 +23,7 @@ class ACMOpenAICreateFineTune {
 
   final String? suffix;
 
-  ACMOpenAICreateFineTune(
+  ACMOpenAICreateFineTuneRequest(
       {required this.trainingFile,
       this.validationFile,
       this.model,

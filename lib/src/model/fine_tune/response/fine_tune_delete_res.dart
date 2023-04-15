@@ -1,11 +1,11 @@
-class ACMOpenAIFineTuneDelete {
+class ACMOpenAIFineTuneDeleteResponse {
   final String id;
   final String object;
   final bool deleted;
 
-  ACMOpenAIFineTuneDelete(
+  ACMOpenAIFineTuneDeleteResponse(
       {required this.id, required this.object, required this.deleted});
 
-  factory ACMOpenAIFineTuneDelete.fromJson(Map<String, dynamic> json) => ACMOpenAIFineTuneDelete(
+  factory ACMOpenAIFineTuneDeleteResponse.fromJson(Map<String, dynamic> json) => ACMOpenAIFineTuneDeleteResponse(
       id: json['id'], object: json['object'], deleted: json['deleted']);
 }

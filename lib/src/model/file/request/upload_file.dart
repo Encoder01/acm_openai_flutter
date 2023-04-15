@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 
-class ACMOpenAIUploadFile {
+class ACMOpenAIUploadFileRequest {
   final String file;
 
   final String purpose;
 
-  ACMOpenAIUploadFile({required this.file, this.purpose = 'fine-tune'});
+  ACMOpenAIUploadFileRequest({required this.file, this.purpose = 'fine-tune'});
 
   Future<FormData> getForm() async {
     return FormData.fromMap({

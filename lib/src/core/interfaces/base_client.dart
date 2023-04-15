@@ -10,13 +10,13 @@ abstract class ACMOpenAINetworkingClientWrapper {
   Future<T> delete<T>(String url,
       {required T Function(Map<String, dynamic>) onSuccess, CancelToken? cancelToken});
 
-  Future<T> post<T>(String url, T Function(Map<String, dynamic>) request,
+  Future<T> post<T>(String url, Map<String, dynamic> request,
       {required T Function(Map<String, dynamic>) onSuccess, CancelToken? cancelToken});
 
-  Stream<Response> postStream<T>(String url, T Function(Map<String, dynamic>) request,
+  Stream<Response> postStream<T>(String url, Map<String, dynamic> request,
       {CancelToken? cancelToken});
 
-  Stream<T> sse<T>(String url, T Function(Map<String, dynamic>) request,
+  Stream<T> sse<T>(String url, Map<String, dynamic> request,
       {required T Function(Map<String, dynamic> value) complete, CancelToken? cancelToken});
 
   Future<T> postFormData<T>(String url, FormData request,

@@ -97,7 +97,7 @@ class ACMOpenAINetworkingClient extends ACMOpenAINetworkingClientWrapper {
   }
 
   @override
-  Future<T> post<T>(String url, T Function(Map<String, dynamic> p1) request,
+  Future<T> post<T>(String url,Map<String, dynamic> request,
       {required T Function(Map<String, dynamic>) onSuccess, CancelToken? cancelToken}) async {
     try {
       log('starting request');
@@ -141,11 +141,11 @@ class ACMOpenAINetworkingClient extends ACMOpenAINetworkingClientWrapper {
   }
 
   @override
-  Stream<Response> postStream<T>(String url, T Function(Map<String, dynamic> p1) request,
+  Stream<Response> postStream<T>(String url, Map<String, dynamic> request,
       {CancelToken? cancelToken}) {
     try {
       final rawData =
-          _dio.post(url, data: Stream.fromIterable([request({})]), cancelToken: cancelToken).asStream();
+          _dio.post(url, data: json.encode(request), cancelToken: cancelToken).asStream();
 
       return rawData;
     } catch (e) {
@@ -157,7 +157,7 @@ class ACMOpenAINetworkingClient extends ACMOpenAINetworkingClientWrapper {
   }
 
   @override
-  Stream<T> sse<T>(String url, T Function(Map<String, dynamic> p1) request,
+  Stream<T> sse<T>(String url, Map<String, dynamic> request,
       {required T Function(Map<String, dynamic> value) complete, CancelToken? cancelToken}) {
     log("starting request");
     log("request body :$request");
