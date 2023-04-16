@@ -22,6 +22,9 @@ class CustomInterceptors extends Interceptor {
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
     debugPrint('have Error [${err.response?.statusCode}] => Data: ${err.response?.data.toString()}');
+    debugPrint('have Error [${err.response?.statusCode}] => Data: ${err.response?.extra.toString()}');
+    debugPrint('have Error [${err.response?.statusCode}] => Data: ${err.response?.headers.map.toString()}');
+    debugPrint('have Error [${err.response?.statusCode}] => Data: ${err.response?.statusMessage.toString()}');
     super.onError(err, handler);
   }
 }
