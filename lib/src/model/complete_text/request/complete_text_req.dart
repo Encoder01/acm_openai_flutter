@@ -32,7 +32,7 @@ class ACMOpenAICompleteTextRequest {
     this.presencePenalty = .0,
     this.frequencyPenalty = .0,
     this.bestOf = 1,
-    this.logitBias,
+    this.logitBias=const {},
     this.user = '',
   });
 
@@ -40,7 +40,7 @@ class ACMOpenAICompleteTextRequest {
         'model': model,
         'prompt': prompt,
         'suffix': suffix,
-        'max_token': maxToken,
+        'max_tokens': maxToken,
         'temperature': temperature,
         'top_p': topP,
         'n': n,

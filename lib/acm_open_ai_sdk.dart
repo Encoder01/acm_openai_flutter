@@ -3,6 +3,8 @@ library acm_open_ai_flutter;
 export 'src/acm_open_ai.dart';
 export 'src/core/constants/constansts.dart';
 export 'src/client/client.dart';
+//export 'src/model/conversation/request/conv_req.dart';
+//export 'src/model/conversation/response/conv_res.dart';
 export 'src/model/audio/request/audio_req.dart';
 export 'src/model/audio/response/audio_res.dart';
 export 'src/model/chat_complete/request/chat_complete_req.dart';

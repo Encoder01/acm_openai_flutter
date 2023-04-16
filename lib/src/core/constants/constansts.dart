@@ -1,6 +1,12 @@
 /// Base ChatGPT Url
 const kURL = "https://api.openai.com/";
-
+const apiBaseUrl = 'https://chat.openai.com/api';
+const backendApiBaseUrl = 'https://chat.openai.com/backend-api';
+const kdefaultUserAgent =
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36';
+const kerrorMessages = [
+  "{\"detail\":\"Hmm...something seems to have gone wrong. Maybe try me again in a little bit.\"}",
+];
 ///model name
 const kTextDavinci3 = 'text-davinci-003';
 const kTextDavinci2 = 'text-davinci-002';

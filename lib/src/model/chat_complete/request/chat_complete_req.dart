@@ -23,7 +23,7 @@ class ACMOpenAIChatCompleteTextRequest {
     this.maxToken = 100,
     this.presencePenalty = .0,
     this.frequencyPenalty = .0,
-    this.logitBias,
+    this.logitBias=const {},
     this.user = '',
   });
 
@@ -38,7 +38,7 @@ class ACMOpenAIChatCompleteTextRequest {
         'max_tokens': maxToken,
         'presence_penalty': presencePenalty,
         'frequency_penalty': frequencyPenalty,
-        //'logit_bias': logitBias,
+        'logit_bias': logitBias,
         'user': user,
       });
 }
