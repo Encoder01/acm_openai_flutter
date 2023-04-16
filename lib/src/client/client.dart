@@ -164,7 +164,7 @@ class ACMOpenAINetworkingClient extends ACMOpenAINetworkingClientWrapper {
     final controller = StreamController<T>.broadcast();
 
     _dio
-        .get(url, cancelToken: cancelToken, options: Options(responseType: ResponseType.stream))
+        .post(url,data: json.encode(request),cancelToken: cancelToken, options: Options(responseType: ResponseType.stream))
         .then((value) {
       (value.data.stream as Stream).listen(
           (event) {
@@ -176,16 +176,19 @@ class ACMOpenAINetworkingClient extends ACMOpenAINetworkingClientWrapper {
                 final data = line.substring(6);
                 if (data.startsWith("[DONE]")) {
                   log("stream response is done");
+
                   return;
                 }
                 controller
                   ..sink
                   ..add(complete(json.decode(data)));
+                log(data.toString());
               }
             }
           },
           onDone: () => controller.close(),
           onError: (err, t) {
+            log("========on error========");
             log(err.toString());
             controller
               ..sink

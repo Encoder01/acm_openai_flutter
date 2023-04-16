@@ -19,7 +19,7 @@ class ACMOpenAICompleteTextManager {
   }
 
   Stream<ACMOpenAICompleteTextResponse> createSSE(ACMOpenAICompleteTextRequest request) {
-    return _client.sse(kURL + CompletionsRoute.create, request.toJson()..addAll({"stream": true}),
+    return _client.sse(kURL + CompletionsRoute.create, request.toJson(),
         complete: (p0) {
       return ACMOpenAICompleteTextResponse.fromJson(p0);
     }, cancelToken: _cancel);
